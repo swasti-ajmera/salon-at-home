@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silent Disco</title>
+  <link rel="stylesheet" href="adminLogin.css">
+</head>
+<body>
+  <div class="login-container">
+    <!-- Welcome Section -->
+    <section class="welcome">
+      <div class="company-name">Salon at Home</div>
+      <div class="tagline">Customer management made easy</div>
+      <button class="login-button" id="loginButton">
+        Sign in with <img class="google" src="./assets/icons/google_logo.png" alt="Google">
+      </button>
+      <a class="anchor-link" href="./login.html">Are you a customer? Log in here</a>
+    </section>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+  <script src="./firebase.js"></script>
+  <script src="./js/admin.js" defer></script>
+</body>
+</html>

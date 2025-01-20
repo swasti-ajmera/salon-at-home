@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Hiding Scrollbars */
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+  }
+  
+  /* Home Container Styling */
+  .home-container {
+    background-color: whitesmoke;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+  }
+  
+  .home-welcome {
+    width: 100%;
+  }
+  
+  .welcome-image {
+    width: 100%;
+  }
+
+  /* Company Description Section */
+  .company-description {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    margin: 40px auto;
+    text-align: center;
+    font-size: 1.5em;
+    color: rgb(55, 51, 51);
+    word-spacing: 3px;
+    max-width: 1000px;
+  }
+  
+.bold-txt{
+    font-size: 1.5em;
+    color: #022a5b;
+}
+  
+  /* Get a Quote Button */
+  .quote-button {
+    margin-top: 20px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 35px;
+    border: none;
+    background-color: #022a5b;
+    color: white;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .quote-button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+  }
+  
+/* About us Section */
+.about-us{
+    width: 100%;
+    padding: 3%;
+    text-align: center;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+.about-us-content{
+  text-align: justify;
+  color: rgb(55, 51, 51);
+  margin: 0 6%;
+}
+
+  /* Our Services Section */
+  .our-services {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    background-color: rgb(203, 224, 231);
+    padding: 2%;
+  }
+  
+  .our-services-heading {
+    font-size: 28.8px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+  }
+  
+  .our-services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+  }
+  
+  /* Individual Service Element */
+  .service-element {
+    text-align: center;
+    width: 200px;
+  }
+  
+  .service-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  .service-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #022a5b;
+  }
+
+  .service-desc{
+    text-align: justify;
+  }
+  
+  /* Link to Services Page */
+  .services-page-link-div {
+    margin-top: 20px;
+  }
+  
+  .services-page-link {
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  
+  .services-page-link:hover {
+    transform: scale(1.05);
+    color: #022a5b;
+  }
+
+  /* FAQ */
+
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Card Styles */
+  .faq-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 1000px;
+  }
+  
+  .faq-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .plus-minus {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .faq-card-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    background-color: #f7f7f7;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .faq-card-content p {
+    margin: 10px 0;
+    text-align: justify;
+  }
+  
+  /* For the expanded state */
+  .faq-card:focus-within .faq-card-content,
+  .faq-card-header:focus + .faq-card-content,
+  .faq-card-header:hover + .faq-card-content {
+    max-height: 200px; /* Adjust as needed */
+    padding: 10px;
+  }
+
+  /* Footer */
+  .footer {
+    /* display: flex; */
+    /* flex-direction: column; */
+    background-color: white;
+    color: black;
+    padding: 20px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-company-name {
+    font-size: 2.3em;
+    font-weight: bolder;
+    font-family: 'Century Gothic', sans-serif;
+    text-transform: uppercase;
+    color: #022a5b;
+}
+
+.footer-company-desc {
+    font-weight: 500;
+    font-family: 'Century Gothic', sans-serif;
+    text-transform: uppercase;
+    color: #022a5b;
+    text-align: right;
+}
+
+.footer-company, .contact-info, .quick-links {
+    margin: 10px;
+    text-align: left;
+}
+
+.footer-company-name, .contact-us-header, .links-header {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: black;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.7em;
+    width: 100%;
+}
+
+/* Quick Links Section */
+.quick-links {
+    padding: 20px;
+}
+
+.quick-links .footer-link {
+    margin-top: 5px;
+    padding: 10px;
+}
+  
+  /* Responsive Design */
+  
+  /* Tablets (768px to 1024px) */
+  @media screen and (max-width: 1024px) {
+    .company-description {
+      font-size: 1.4em;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+  
+    .service-image-div {
+      height: 180px;
+      width: 180px;
+      padding: 15%;
+    }
+  
+    .quote-button {
+      font-size: 0.9em;
+      padding: 8px 16px;
+    }
+  }
+  
+  /* Mobile Phones (up to 767px) */
+  @media screen and (max-width: 767px) {
+    .company-description {
+      font-size: 1.2em;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+  
+    .service-image-div {
+      height: 150px;
+      width: 150px;
+      padding: 10%;
+    }
+  
+    .service-name {
+      font-size: 1em;
+    }
+  
+    .quote-button {
+      font-size: 0.8em;
+      padding: 6px 12px;
+    }
+  
+    .our-services-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+  
