@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((res) => res.json())
           .then((data) => {
             if (data) {
+              // Store user ID in localStorage
+              localStorage.setItem("userId", data.user._id);
+              //console.log("User ID", localStorage.getItem("userId"))
               window.location.href = "/main.html"; // Redirect normal user
             }
           });

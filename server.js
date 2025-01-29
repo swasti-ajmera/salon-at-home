@@ -3,6 +3,9 @@ const path = require('path')
 const cors = require("cors");
 const userAuth = require("./routes/auth")
 const adminAuth = require("./routes/adminAuth")
+const salonRoute = require("./routes/salonRoute")
+const fetchSalon = require("./routes/fetchSalon")
+const appointmentRoute = require("./routes/appointmentRoute")
 
 // Initialize the application
 const app = express();
@@ -28,6 +31,9 @@ app.get('/login', (req, res) => {
 // Creating user authentication API
 app.use('/api/user', userAuth);
 app.use('/api/admin', adminAuth);
+app.use('/api/salon', salonRoute);
+app.use(fetchSalon);
+app.use('/api/appointments', appointmentRoute);
 
 // Start the server
 app.listen(process.env.PORT, async () => {

@@ -21,8 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              if (data) {
-                window.location.href = "/adminDashboard.html"; // Redirect normal user
+              if (data && data.redirectTo) {
+                if (data.salon) {
+                  localStorage.setItem('salonId', data.salon);
+                }
+                // window.location.href = "/adminDashboard.html"; // Redirect admin
+                window.location.href = data.redirectTo;
               }
             });
         })

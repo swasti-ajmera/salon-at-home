@@ -1,0 +1,116 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/salonDetails.css" />
+  </head>
+  <body>
+    <h1>Salon Details Form</h1>
+    <form id="salonForm">
+      <!-- Salon Name -->
+      <label for="name">Salon Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your salon's name"
+        required
+      />
+
+      <!-- Salon Description -->
+      <label for="description">About the Salon:</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        placeholder="Write about your salon"
+        required
+      ></textarea>
+
+      <!-- Salon Logo -->
+      <label for="logo">Salon Logo (Optional):</label>
+      <input type="file" id="logo" name="logo" accept="image/*" />
+
+      <!-- Phone Number -->
+      <label for="phone">Contact Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Enter contact number"
+        required
+      />
+
+      <!-- Email Address -->
+      <label for="email">Contact Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter contact email"
+        required
+      />
+
+      <!-- Operating Hours -->
+      <label for="openingTime">Opening Time (Monday to Saturday):</label>
+      <input type="time" id="openingTime" name="openingTime" required />
+
+      <label for="closingTime">Closing Time (Monday to Saturday):</label>
+      <input type="time" id="closingTime" name="closingTime" required />
+
+      <!-- Categories Dropdown -->
+    <label>Select Categories:</label>
+    <div id="categoryDropdown" class="dropdown">
+      <button type="button" id="categoryToggle" class="dropdown-toggle">
+        Select Categories
+      </button>
+      <div id="dropdownMenu" class="dropdown-menu">
+        <label>
+          <input type="checkbox" value="Hair Services" />
+          Hair Services
+        </label>
+        <label>
+          <input type="checkbox" value="Skin Care Services" />
+          Skin Care Services
+        </label>
+        <label>
+          <input type="checkbox" value="Hair Removal" />
+          Hair Removal
+        </label>
+        <label>
+          <input type="checkbox" value="Nail Care" />
+          Nail Care
+        </label>
+        <label>
+          <input type="checkbox" value="Makeup Services" />
+          Makeup Services
+        </label>
+        <label>
+          <input type="checkbox" value="Massage & Spa Services" />
+          Massage & Spa Services
+        </label>
+        <label>
+          <input type="checkbox" value="Grooming" />
+          Grooming
+        </label>
+        <label>
+          <input type="checkbox" value="Specialty Treatments" />
+          Specialty Treatments
+        </label>
+        <label>
+          <input type="checkbox" value="Packages" />
+          Packages
+        </label>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="servicesContainer"></div>
+
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+    <script src="./js/salonDetails.js"></script>
+  </body>
+</html>

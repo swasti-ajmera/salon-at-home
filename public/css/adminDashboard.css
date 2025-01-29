@@ -1,0 +1,58 @@
+:root {
+    --primary-color: #4a148c;
+    --secondary-color: #6a1b9a;
+    --background-color: #f3e5f5;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.appointments-table {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.status-filter {
+    margin-bottom: 20px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.status.pending { background-color: #ffd700; }
+.status.approved { background-color: #4caf50; color: white; }
+.status.rejected { background-color: #f44336; color: white; }
+
+.action-buttons .btn {
+    margin-right: 10px;
+    padding: 0 10px;
+}
+
+.approve-btn {
+    background-color: green;
+}
+
+.reject-btn {
+    background-color: red;
+}

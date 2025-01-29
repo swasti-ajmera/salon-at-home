@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .category-container {
+    margin: 20px 0;
+  }
+  
+  .services-container {
+    margin: 10px 0 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .services-container strong {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .dropdown-toggle {
+    background-color: #f1f1f1;
+    color: black;
+    border: 1px solid #ccc;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .dropdown-toggle:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+    padding: 10px;
+  }
+  
+  .dropdown-menu label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .dropdown-menu input {
+    margin-right: 10px;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
