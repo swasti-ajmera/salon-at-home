@@ -10,9 +10,10 @@ router.post('/', async (req, res) => {
     description,
     phone,
     email,
+    addressLine,
+    suburb,
     openingTime,
     closingTime,
-    logo,
     categoriesAndServices,
   } = req.body;
 
@@ -29,9 +30,10 @@ router.post('/', async (req, res) => {
       description,
       phone,
       email,
+      addressLine,
+      suburb,
       openingTime,
       closingTime,
-      logo,
       categoriesAndServices,
       admin: admin._id, // Reference the admin ID
     });
