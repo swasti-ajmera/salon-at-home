@@ -5,9 +5,10 @@ const SalonSchema = new mongoose.Schema({
   description: { type: String, required: true },
   phone: { type: String, required: true },
   email: { type: String, required: true },
+  addressLine: { type: String, required: true },
+  suburb: { type: String, required: true },
   openingTime: { type: String, required: true },
   closingTime: { type: String, required: true },
-  logo: { type: Object, default:null },
   categoriesAndServices: [
     {
       category: { type: String, required: true },

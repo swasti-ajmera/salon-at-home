@@ -20,14 +20,14 @@ body {
   }
   
   button {
-    background-color: #4CAF50;
+    background-color: #022a5b;
     color: white;
     border: none;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #022a5b;
   }
   
   .category-container {

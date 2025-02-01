@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Salon Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/updateSalon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="update-container">
+        <div class="sidebar">
+            <h4>Admin Panel</h4>
+            <ul class="collection">
+                <li class="collection-item"><a href="adminDashboard.html">Appointments</a></li>
+                <li class="collection-item active">Update Salon</li>
+            </ul>
+        </div>
+    
+        <div class="main-content">
+            <div class="update-form animate_animated animate_fadeIn">
+                <h4>Update Salon Details</h4>
+                <form id="updateSalonForm">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="name" type="text" class="validate" required>
+                            <label for="name">Salon Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="phone" type="tel" class="validate" required>
+                            <label for="phone">Phone</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="description" class="materialize-textarea" required></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="addressLine" type="text" class="validate" required>
+                            <label for="addressLine">Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="suburb" type="text" class="validate" required>
+                            <label for="suburb">Suburb</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="openingTime" type="time" class="validate" required>
+                            <label for="openingTime">Opening Time</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="closingTime" type="time" class="validate" required>
+                            <label for="closingTime">Closing Time</label>
+                        </div>
+                    </div>
+                    
+                    <div id="categoriesContainer" class="row">
+                        <!-- Categories and services will be dynamically added here -->
+                    </div>
+    
+                    <div class="row">
+                        <div class="col s12">
+                            <button type="submit" class="btn waves-effect waves-light submit-btn right">
+                                Update
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/updateSalon.js"></script>
+</body>
+</html>

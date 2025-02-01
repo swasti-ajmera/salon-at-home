@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Salon Details Form</h1>
-    <form id="salonForm">
+    <form id="salonForm" enctype="multipart/form-data">
       <!-- Salon Name -->
       <label for="name">Salon Name:</label>
       <input
@@ -48,6 +48,26 @@
         id="email"
         name="email"
         placeholder="Enter contact email"
+        required
+      />
+
+      <!-- Salon Address -->
+      <label for="addressLine">Address:</label>
+      <textarea
+        id="addressLine"
+        name="addressLine"
+        rows="4"
+        placeholder="Where are you located?"
+        required
+      ></textarea>
+
+      <!-- Salon Name -->
+      <label for="suburb">Suburb:</label>
+      <input
+        type="text"
+        id="suburb"
+        name="suburb"
+        placeholder="Enter your suburb"
         required
       />
 

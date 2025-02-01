@@ -140,9 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
       description: formData.get("description"),
       phone: formData.get("phone"),
       email: formData.get("email"),
+      addressLine: formData.get("addressLine"),
+      suburb: formData.get("suburb"),
       openingTime: formData.get("openingTime"),
       closingTime: formData.get("closingTime"),
-      logo: formData.get("logo") || null,
+      logo: formData.get("logo"),
       selectedCategories: Array.from(dropdownMenu.querySelectorAll("input:checked")).map(
         (checkbox) => checkbox.value
       ),
