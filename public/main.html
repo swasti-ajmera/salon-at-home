@@ -3,54 +3,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salon Finder</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h2 class="center-align">Available Salons</h2>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-wrapper navbar-container">
+            <a href="#" class="brand-logo">
+                <i class="material-icons">content_cut</i>
+                Salon At Home
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="userAppointments.html"><i class="material-icons left">event</i>Appointments</a></li>
+                <li><a href="userProfile.html"><i class="material-icons left">person</i>Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="header-title">Find Your Perfect Salon</h1>
+            <p class="header-subtitle">Book appointments at the best salons in your area</p>
+            <div class="search-container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="input-field search-box">
+                            <i class="material-icons prefix s12">search</i>
+                            <input type="text" id="search" class="validate">
+                            <label for="search">Search for salons, services, or suburbs</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Filter Section -->
+        <div class="row filter-section">
+            <div class="col s12 m4">
+                <div class="input-field">
+                    <select id="filter">
+                        <option value="" disabled selected>Filter by</option>
+                        <option value="suburb">Suburb</option>
+                    </select>
+                    <label>Sort Options</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salons Grid -->
         <div id="salons-container" class="salon-grid">
-            <!-- Salon cards will be dynamically inserted here -->
+            <!-- Sample salon card for styling reference -->
+            <!-- <div class="salon-card">
+                <div class="salon-image"></div>
+                <div class="salon-card-content">
+                    <h5 class="salon-card-title">Beautiful You Salon</h5>
+                    <div class="salon-info">
+                        <p><i class="material-icons tiny">location_on</i> 123 Beauty Street</p>
+                        <p><i class="material-icons tiny">star</i> 4.8 (120 reviews)</p>
+                    </div>
+                    <button class="btn waves-effect waves-light book-btn">
+                        Book Now
+                        <i class="material-icons right">arrow_forward</i>
+                    </button>
+                </div>
+            </div> -->
         </div>
     </div>
 
     <!-- Appointment Modal -->
     <div id="appointment-modal" class="modal">
         <div class="modal-content">
-            <h4>Book Appointment</h4>
+            <h4 class="modal-title">Book Appointment</h4>
             <form id="appointment-form">
                 <input type="hidden" id="salon-id">
-                <div class="input-field">
-                    <input type="text" id="name" required>
-                    <label for="name">Name</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" id="email" required>
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">event</i>
+                        <input type="text" id="appointment-date" class="datepicker" required>
+                        <label for="appointment-date">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">schedule</i>
+                        <input type="time" id="appointment-time" required>
+                        <label for="appointment-time">Time</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">content_cut</i>
+                        <select id="service" class="service" required>
+                            <option value="" disabled selected>Choose Service</option>
+                        </select>
+                        <label>Service</label>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input type="tel" id="phone" required>
-                    <label for="phone">Phone Number</label>
+                <div class="modal-footer">
+                    <button type="submit" class="btn waves-effect waves-light book-btn">
+                        Confirm Booking
+                        <i class="material-icons right">check</i>
+                    </button>
                 </div>
-                <div class="input-field">
-                    <input type="date" id="appointment-date" class="datepicker" required>
-                    <label for="appointment-date">Date</label>
-                </div>
-                <div class="input-field">
-                  <input type="time" id="appointment-time" required>
-                  <label for="appointment-time">Time</label>
-              </div>
-                <div class="input-field">
-                    <select id="service" required>
-                        <option value="" disabled selected>Choose Service</option>
-                    </select>
-                    <label>Service</label>
-                </div>
-                <button type="submit" class="btn waves-effect waves-light book-btn">
-                    Book Appointment
-                    <i class="material-icons right">send</i>
-                </button>
             </form>
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./main.js"></script>
 </body>

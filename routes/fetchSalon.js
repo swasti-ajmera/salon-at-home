@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/api/salons', async (req, res) => {
     try {
         const salons = await Salon.find()
-            .select('name description openingTime closingTime');
+            .select('name description addressLine suburb openingTime closingTime');
         res.json(salons);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching salons', error: error.message });
