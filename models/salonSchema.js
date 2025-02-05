@@ -12,7 +12,7 @@ const SalonSchema = new mongoose.Schema({
   categoriesAndServices: [
     {
       category: { type: String, required: true },
-      services: { type: [String], required: true }, // Array of services under each category
+      services: { type: [String], required: true },
     },
   ],
   admin: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' }, // Reference to the Admin

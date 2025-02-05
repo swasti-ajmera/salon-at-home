@@ -4,7 +4,7 @@ const Appointment = require('../models/appointmentModel');
 const Salon = require('../models/salonSchema');
 
 router.post('/', async (req, res) => {
-  const { salon, name, phone, user, service, date, time } = req.body;
+  const { salon, name, email, user, service, date, time } = req.body;
   
   try {
     // Find salon to validate hours
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
     const newAppointment = new Appointment({
       salon,
       name,
-      phone,
+      email,
       user,
       service,
       date,
@@ -98,10 +98,34 @@ router.put('/:appointmentId/respond', async (req, res) => {
         rejectionReason: status === 'Rejected' ? rejectionReason : null 
       },
       { new: true }
-    );
+    ).populate('user', 'email');
+
+    if(!appointment){
+      return res.status(404).json({error : 'Appointment not found'});
+    }
+
     res.status(200).json({ message: 'Appointment updated', appointment });
   } catch (error) {
     res.status(500).json({ error: 'Failed to update appointment' });
+  }
+});
+
+router.get('/user/:userId', async (req, res) => {
+  try {
+      const appointments = await Appointment.find({ 
+          user: req.params.userId
+      })
+      .populate('salon', 'name') // Populate salon details if needed
+      .sort({ date: -1, time: -1 }); // Sort by date and time, most recent first
+      
+      if (!appointments) {
+          return res.status(404).json({ message: 'No appointments found' });
+      }
+
+      res.status(200).json(appointments);
+  } catch (error) {
+      console.error('Error fetching user appointments:', error);
+      res.status(500).json({ error: 'Failed to fetch user appointments' });
   }
 });
 

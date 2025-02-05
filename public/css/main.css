@@ -1,43 +1,327 @@
 :root {
-  --primary-color: #4a148c;
-  --secondary-color: #6a1b9a;
-  --background-color: #f3e5f5;
+  --primary-color: #022a5b;
+  --secondary-color: rgb(163, 201, 214);
+  --accent-color: #1d6277;
+  --background-color: #f8f9fa;
+  --text-dark: #022a5b;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --black: #000000;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
-  font-family: 'Roboto', sans-serif;
+  color: var(--black);
 }
 
+/* Navbar Styles */
+.navbar {
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  height: auto;
+  padding: 0;
+}
+
+.navbar-container {
+  background-color: var(--white);
+  padding: 0 3rem;
+  width: 100%;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 3rem;
+}
+
+.brand-logo {
+  color: var(--black) !important;
+  position: relative !important;
+  left: 0 !important;
+  transform: none !important;
+  padding-left: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo i {
+  color: var(--black);
+}
+
+.right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.right a {
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.right a i {
+  color: var(--black);
+}
+
+.right a:hover {
+  color: var(--accent-color);
+}
+/* Header Styles */
+.page-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  padding: 4rem 0;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 0.2rem;
+  box-shadow: var(--shadow);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  border-radius: 8px;
+  padding-left: 2rem !important;
+}
+
+/* Main Content Styles */
+.main-content {
+  padding: 3rem 0;
+}
+
+.filter-section {
+  margin-bottom: 2rem;
+}
+
+/* Salon Grid Styles */
 .salon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
 }
 
 .salon-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .salon-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* .salon-image {
+  height: 200px;
+  background-image: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  background-size: cover;
+  background-position: center;
+} */
+
 .salon-card-content {
-  padding: 15px;
+  padding: 1.5rem;
+}
+
+.salon-card-title {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.salon-info {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.salon-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
 }
 
 .book-btn {
   background-color: var(--primary-color);
-  color: white;
-  margin-top: 10px;
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+  height: auto;
+  line-height: normal;
 }
 
+.book-btn i {
+  margin-left: 0.5rem;
+}
+
+.book-btn:hover, 
+.book-btn:focus {
+  background-color: var(--secondary-color);
+}
+
+/* Modal Styles */
 .modal {
-  max-height: 85%;
+  max-height: fit-content;
+  border-radius: 15px;
+  max-width: fit-content;
+  background-color: var(--white);
+}
+
+.datepicker-modal {
+  max-height: fit-content !important;
+  max-width: fit-content !important;
+  border-radius: 15px !important;
+  top: 50% !important;  
+  transform: translateY(-50%) !important;
+}
+
+.datepicker-date-display {
+  background-color: var(--primary-color);
+}
+
+.datepicker-cancel, 
+.datepicker-done {
+  color: var(--primary-color);
+}
+
+.datepicker-calendar-container {
+  padding: 1rem;
+}
+
+.is-selected .datepicker-day-button {
+  background-color: var(--primary-color) !important;
+}
+
+.modal-content {
+  padding: 2.5rem 2.5rem 1.5rem;
+}
+
+.modal-title {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Form Layout */
+.modal .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+.modal .row .input-field {
+  flex: 1 1 calc(50% - 0.75rem);
+  min-width: 250px;
+  margin: 0.5rem 0;
+}
+
+.input-field {
+  position: relative;
+}
+
+.input-field input,
+.input-field select {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.input-field label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.input-field .prefix {
+  font-size: 1.2rem;
+  top: 0.8rem;
+  color: var(--primary-color);
+}
+
+.input-field input:focus {
+  border-bottom: 2px solid var(--primary-color) !important;
+  box-shadow: 0 1px 0 0 var(--primary-color) !important;
+}
+
+.input-field input:focus + label,
+.input-field input.valid + label {
+  color: var(--primary-color) !important;
+}
+
+.select-wrapper input.select-dropdown {
+  border-bottom: 1px solid var(--text-light);
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.modal-footer {
+  background-color: var(--background-color);
+  padding: 1rem 2.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer .book-btn {
+  margin: 0;
+  width: auto;
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-container {
+      padding: 0 1rem;
+  }
+  
+  .header-title {
+      font-size: 2rem;
+  }
+  
+  .search-container {
+      margin: 0 1rem;
+  }
+  
+  .salon-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 1rem;
+  }
 }

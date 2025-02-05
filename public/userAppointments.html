@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./css/userAppointments.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">My Appointments</a>
+            <ul class="right">
+                <li><a href="main.html"><i class="material-icons">home</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="user-container">
+        <div class="dashboard-content animate__animated animate__fadeIn">
+            <!-- <div class="row stats-row">
+                <div class="col s12 m4">
+                    <div class="stat-card">
+                        <i class="material-icons">schedule</i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="pending-count">0</span>
+                            <span class="stat-label">Pending</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="stat-card">
+                        <i class="material-icons">check_circle</i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="approved-count">0</span>
+                            <span class="stat-label">Approved</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="stat-card">
+                        <i class="material-icons">cancel</i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="rejected-count">0</span>
+                            <span class="stat-label">Rejected</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="appointments-section">
+                <div class="filter-section">
+                    <div class="input-field" style="min-width: 200px;">
+                        <select id="status-filter" class="browser-default">
+                            <option value="">All Appointments</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" id="search-input" placeholder="Search appointments...">
+                    </div>
+                </div>
+
+                <div class="appointments-table animate__animated animate__fadeIn">
+                    <table class="highlight responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointments-list">
+                            <!-- Appointments will be dynamically inserted -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/userAppointments.js"></script>
+</body>
+</html>
