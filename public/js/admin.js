@@ -1,14 +1,14 @@
-// Wait until the DOM is fully loaded
+// Load DOM
 document.addEventListener("DOMContentLoaded", () => {
   const googleSignInButton = document.getElementById("loginButton");
   // const userInfoDisplay = document.getElementById("user-info");
 
-  // Add click listener to the login button
+  // Click listener to the login button
   googleSignInButton.addEventListener("click", () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        // Retrieve user details
+        // Retrieving user details
         const user = result.user;
         const name = user.displayName;
         const email = user.email;

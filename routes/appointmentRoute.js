@@ -129,4 +129,31 @@ router.get('/user/:userId', async (req, res) => {
   }
 });
 
+router.delete('/:appointmentId', async (req, res) => {
+  try {
+      const appointment = await Appointment.findById(req.params.appointmentId);
+      
+      if (!appointment) {
+          return res.status(404).json({ error: 'Appointment not found' });
+      }
+
+      if (appointment.status !== 'Pending') {
+          return res.status(400).json({ error: 'Only pending appointments can be cancelled' });
+      }
+
+      const createdTime = new Date(appointment.createdAt).getTime();
+      const currentTime = new Date().getTime();
+      const hoursDifference = (currentTime - createdTime) / (1000 * 60 * 60);
+
+      if (hoursDifference > 18) {
+          return res.status(400).json({ error: 'Cannot cancel appointment after 18 hours of booking' });
+      }
+
+      await Appointment.findByIdAndDelete(req.params.appointmentId);
+      res.status(200).json({ message: 'Appointment cancelled successfully' });
+  } catch (error) {
+      res.status(500).json({ error: 'Failed to cancel appointment' });
+  }
+});
+
 module.exports = router;

@@ -1,24 +1,29 @@
 :root {
-    --primary-color: #4a148c;
-    --secondary-color: #6a1b9a;
-    --background-color: #f3e5f5;
-    --text-color: #333;
-    --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-body {
+    --primary-color: #022a5b;
+    --secondary-color: rgb(163, 201, 214);
+    --accent-color: #1d6277;
+    --background-color: #f8f9fa;
+    --text-dark: #022a5b;
+    --text-light: #636e72;
+    --white: #ffffff;
+    --black: #000000;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  } 
+  
+  body {
     background-color: var(--background-color);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: var(--text-color);
-}
-
-.admin-container {
+  }
+  
+  .admin-container {
     display: flex;
     min-height: 100vh;
-}
-
-/* Sidebar Styles */
-.sidebar {
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
     width: 280px;
     background-color: white;
     padding: 20px 0;
@@ -26,70 +31,71 @@ body {
     position: fixed;
     height: 100vh;
     z-index: 1000;
-}
-
-.salon-info {
+  }
+  
+  .salon-info {
     padding: 20px;
     text-align: center;
     border-bottom: 1px solid #eee;
-}
-
-.salon-icon {
+  }
+  
+  .salon-icon {
     font-size: 48px;
     color: var(--primary-color);
     margin-bottom: 10px;
-}
-
-.collection {
+  }
+  
+  .collection {
     border: none;
     margin: 0;
-}
-
-.collection .collection-item {
+  }
+  
+  .collection .collection-item {
     border: none;
     padding: 15px 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.collection .collection-item i {
+    color: var(--accent-color);
+  }
+  
+  .collection .collection-item i {
     margin-right: 15px;
-}
-
-.collection .collection-item.active {
+  }
+  
+  .collection .collection-item.active {
     background-color: var(--primary-color);
     color: white;
-}
-
-.collection .collection-item:hover {
+  }
+  
+  .collection .collection-item:hover {
     background-color: #f5f5f5;
-}
+  }
+  
+  .collection .collection-item.active:hover {
+    background-color: var(--accent-color);
+  }
 
-.collection .collection-item.active:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Main Content Styles */
-.main-content {
+  /* Main Content Styles */
+  .main-content {
     flex-grow: 1;
     margin-left: 280px;
     padding: 20px;
-}
-
-.top-bar {
+  }
+  
+  .top-bar {
     background-color: var(--primary-color);
     margin-bottom: 20px;
     border-radius: 8px;
-}
-
-/* Stats Cards */
-.stats-row {
+  }
+  
+  /* Stats Cards */
+  .stats-row {
     margin-bottom: 30px;
-}
-
-.stat-card {
+  }
+  
+  .stat-card {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -97,42 +103,42 @@ body {
     display: flex;
     align-items: center;
     transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
+  }
+  
+  .stat-card:hover {
     transform: translateY(-5px);
-}
-
-.stat-card i {
+  }
+  
+  .stat-card i {
     font-size: 40px;
     color: var(--primary-color);
     margin-right: 20px;
-}
-
-.stat-info {
+  }
+  
+  .stat-info {
     display: flex;
     flex-direction: column;
-}
-
-.stat-value {
+  }
+  
+  .stat-value {
     font-size: 24px;
     font-weight: bold;
     color: var(--primary-color);
-}
-
-.stat-label {
+  }
+  
+  .stat-label {
     color: #666;
     font-size: 14px;
-}
-
-/* Filter Section */
-.filter-section {
+  }
+  
+  /* Filter Section */
+  .filter-section {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
-}
-
-.search-field {
+  }
+  
+  .search-field {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -140,78 +146,80 @@ body {
     padding: 0 15px;
     border-radius: 4px;
     box-shadow: var(--card-shadow);
-}
-
-.search-field input {
+  }
+  
+  .search-field input {
     border: none;
     margin: 0;
     padding: 0 10px;
-}
-
-.search-field i {
+  }
+  
+  .search-field i {
     color: #999;
-}
-
-/* Appointments Table */
-.appointments-table {
+  }
+  
+  /* Appointments Table */
+  .appointments-table {
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: var(--card-shadow);
-}
-
-table.highlight tbody tr:hover {
+  }
+  
+  table.highlight tbody tr:hover {
     background-color: #f5f5f5;
-}
-
-.status {
+  }
+  
+  .status {
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.9em;
     display: inline-block;
-}
-
-.status.pending {
+  }
+  
+  .status.pending {
     background-color: #fff3cd;
     color: #856404;
-}
-
-.status.approved {
+  }
+  
+  .status.approved {
     background-color: #d4edda;
     color: #155724;
-}
-
-.status.rejected {
+  }
+  
+  .status.rejected {
     background-color: #f8d7da;
     color: #721c24;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
     .sidebar {
-        width: 70px;
-        padding: 10px 0;
+      width: 70px;
+      padding: 10px 0;
     }
-    
+  
     .sidebar span {
-        display: none;
+      display: none;
     }
-    
+  
     .main-content {
-        margin-left: 70px;
+      margin-left: 70px;
     }
-    
+  
     .salon-info h4 {
-        display: none;
+      display: none;
     }
-}
-
-/* Animations */
-.btn, .status {
+  }
+  
+  /* Animations */
+  .btn,
+  .status {
     transition: all 0.3s ease;
-}
-
-.btn:hover {
+  }
+  
+  .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  

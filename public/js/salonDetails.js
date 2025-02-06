@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   dropdownMenu.addEventListener("change", () => {
-    servicesContainer.innerHTML = ""; // Clear previous services
+    servicesContainer.innerHTML = "";
 
     const selectedCategories = Array.from(dropdownMenu.querySelectorAll("input:checked")).map(
       (checkbox) => checkbox.value
@@ -147,7 +147,7 @@ salonForm.addEventListener("submit", async (event) => {
     selectedCategories: Array.from(dropdownMenu.querySelectorAll("input:checked")).map(
       (checkbox) => checkbox.value
     ),
-    categoriesAndServices: [], // Initialize an empty array for the categories and services
+    categoriesAndServices: [],
   };
 
   // Group selected services under their respective categories
@@ -172,7 +172,7 @@ salonForm.addEventListener("submit", async (event) => {
     const result = await response.json();
     if (response.ok) {
       alert("Salon details submitted successfully!");
-      window.location.href = "/adminDashboard.html"; // Redirect to dashboard
+      window.location.href = "/adminDashboard.html"; // Redirecting to dashboard
     } else {
       alert(result.error || "Something went wrong!");
     }

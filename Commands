@@ -1,0 +1,10 @@
+docker build -t swastiajmera/salon-at-home:1.1.1 .
+docker run --name salon-at-home-image -p 5050:3000 swastiajmera/salon-at-home:1.1.1
+docker ps
+docker exec -it salon-at-home-image /bin/bash
+docker push swastiajmera/salon-at-home:1.1.1
+
+
+docker rmi <AccountName>/week-8:1.1.1
+
+docker pull swastiajmera/salon-at-home:1.1.1
