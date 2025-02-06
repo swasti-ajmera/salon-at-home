@@ -3,6 +3,7 @@
 // const nodemailer = require('nodemailer');
 // require('dotenv').config();
 
+
 // // Configure nodemailer with your email service
 // const transporter = nodemailer.createTransport({
 //     host: 'smtp.office365.com',
@@ -63,4 +64,3 @@
 // };
 
 // module.exports = { sendAppointmentEmail };
-

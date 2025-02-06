@@ -15,7 +15,7 @@ const SalonSchema = new mongoose.Schema({
       services: { type: [String], required: true },
     },
   ],
-  admin: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' }, // Reference to the Admin
+  admin: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' },
 });
 
 module.exports = mongoose.model('Salon', SalonSchema);

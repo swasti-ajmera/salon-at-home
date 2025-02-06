@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderCategoriesSection(existingCategories = []) {
-        categoriesContainer.innerHTML = ''; // Clear existing content
+        categoriesContainer.innerHTML = '';
         
         // Create category selection dropdown
         const dropdownContainer = document.createElement('div');
@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         categoriesContainer.appendChild(dropdownContainer);
 
-        // Initialize Materialize select
         const selectElement = dropdownContainer.querySelector('select');
         M.FormSelect.init(selectElement);
 
@@ -160,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriesContainer.appendChild(section);
         }
 
-        // Populate services
+        // Services
         section.innerHTML = `
             <h5>${categoryName}</h5>
             <div class="services-list">
@@ -178,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateServiceSections(selectedCategories, existingData = []) {
-        // Remove service sections for unselected categories
+        // Removing service sections for unselected categories
         document.querySelectorAll('.service-section').forEach(section => {
             const categoryName = section.querySelector('h5').textContent;
             if (!selectedCategories.includes(categoryName)) {
