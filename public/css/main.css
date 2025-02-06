@@ -10,68 +10,80 @@
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
-  color: var(--black);
+  color: var(--text-dark);
 }
 
-/* Navbar Styles */
+
 .navbar {
+  width: 100%;
   background-color: var(--primary-color);
   box-shadow: var(--shadow);
-  height: auto;
-  padding: 0;
 }
 
 .navbar-container {
-  background-color: var(--white);
-  padding: 0 3rem;
-  width: 100%;
+  background-color: var(--primary-color);
 }
 
 .nav-wrapper {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 3rem;
+  justify-content: space-around;
+  padding: 0 2rem;
+  height: 70px;
 }
 
 .brand-logo {
-  color: var(--black) !important;
-  position: relative !important;
-  left: 0 !important;
-  transform: none !important;
-  padding-left: 0 !important;
+  left: 2rem;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .brand-logo i {
-  color: var(--black);
+  font-size: 2rem;
 }
 
 .right {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  margin-left: auto; 
+  gap: 2rem;
 }
 
 .right a {
-  color: var(--black);
-  display: flex;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-flex; 
   align-items: center;
   gap: 0.5rem;
-}
-
-.right a i {
-  color: var(--black);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  white-space: nowrap; 
 }
 
 .right a:hover {
-  color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.1);
 }
-/* Header Styles */
+
+.right a i {
+  font-size: 1.2rem;
+}
+
 .page-header {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: var(--white);
@@ -107,94 +119,117 @@ body {
   padding-left: 2rem !important;
 }
 
-/* Main Content Styles */
 .main-content {
-  padding: 3rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
 }
 
 .filter-section {
-  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
-/* Salon Grid Styles */
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  color: var(--primary-color);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+
 .salon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-  padding: 1rem 0;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
 }
 
 .salon-card {
   background-color: var(--white);
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .salon-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* .salon-image {
+.salon-image {
   height: 200px;
-  background-image: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-  background-size: cover;
-  background-position: center;
-} */
+  background: url('') center/cover;
+  position: relative;
+}
+
+.salon-rating {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
 
 .salon-card-content {
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .salon-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   color: var(--text-dark);
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  font-size: 1.25rem;
 }
 
 .salon-info {
-  color: var(--text-light);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .salon-info p {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  color: var(--text-light);
 }
 
 .book-btn {
+  width: 100%;
+  padding: 1rem;
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 0.8rem 1.5rem;
   border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: inline-flex;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: background-color 0.3s ease;
-  height: auto;
-  line-height: normal;
 }
 
-.book-btn i {
-  margin-left: 0.5rem;
+.book-btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
 }
 
-.book-btn:hover, 
-.book-btn:focus {
-  background-color: var(--secondary-color);
-}
 
-/* Modal Styles */
 .modal {
   max-height: fit-content;
   border-radius: 15px;
@@ -240,7 +275,6 @@ body {
   border-bottom: 2px solid var(--accent-color);
 }
 
-/* Form Layout */
 .modal .row {
   display: flex;
   flex-wrap: wrap;
@@ -305,23 +339,66 @@ body {
   margin: 0;
   width: auto;
 }
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .navbar-container {
-      padding: 0 1rem;
-  }
-  
+
+@media (max-width: 1024px) {
   .header-title {
-      font-size: 2rem;
-  }
-  
-  .search-container {
-      margin: 0 1rem;
+    font-size: 3.5rem;
   }
   
   .salon-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+  
+  .header-title {
+    font-size: 2.5rem;
+  }
+  
+  .right {
+    gap: 0.5rem;
+  }
+  
+  .right a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .right a i {
+    font-size: 1.1rem;
+  }
+  
+  .search-box {
+    flex-direction: column;
+  }
+  
+  .filter-section {
+    justify-content: center;
+  }
+  
+  .modal-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 2rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .salon-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .salon-card-content {
+    padding: 1.5rem;
   }
 }

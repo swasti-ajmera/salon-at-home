@@ -1,21 +1,19 @@
 :root {
-    --primary-color: #022a5b;
-    --secondary-color: #1d6277;
-    --background-color: rgb(203, 224, 231);
-  }
+  --primary-color: #022a5b; 
+  --secondary-color: rgb(163, 201, 214); 
+  --accent-color: #1d6277; 
+  --background-color: #f8f9fa; 
+  --text-dark: #022a5b;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --black: #000000;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
   body {
-    background-color: var(--background-color);
+    background-color: rgb(203, 224, 231);
     font-family: "Roboto", sans-serif;
     padding: 20px;
-  }
-
-  .btn {
-    background-color: var(--primary-color);
-  }
-
-  .btn:hover {
-    background-color: var(--secondary-color);
   }
 
   .update-form {
@@ -27,13 +25,12 @@
     margin: 20px auto;
   }
 
-  .submit-btn {
+  .submit-btn, .btn, .back-btn {
     background-color: var(--primary-color);
   }
 
   .back-btn {
     margin-bottom: 20px;
-    background-color: var(--primary-color);
   }
 
   .profile-img {
