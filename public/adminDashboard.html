@@ -5,43 +5,114 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./css/adminDashboard.css">
 </head>
 <body>
     <div class="admin-container">
-        <div class="sidebar">
-            <h4>Admin Panel</h4>
+        <div class="sidebar animate__animated animate__slideInLeft">
+            <div class="salon-info">
+                <i class="material-icons salon-icon">content_cut</i>
+                <h4>Admin Panel</h4>
+            </div>
             <ul class="collection">
-                <li class="collection-item active">Appointments</li>
+                <li class="collection-item active">
+                    <i class="material-icons">event</i>
+                    <span>Appointments</span>
+                </li>
+                <li class="collection-item">
+                    <a href="updateSalon.html">
+                        <i class="material-icons">edit</i>
+                        <span>Update Salon</span>
+                    </a>
+                </li>
+                <li class="collection-item">
+                    <a href="#" class="logout">
+                        <i class="material-icons">exit_to_app</i>
+                        <span>Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
 
         <div class="main-content">
-            <div class="status-filter">
-                <select id="status-filter" class="browser-default">
-                    <option value="">All Appointments</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Approved">Approved</option>
-                    <option value="Rejected">Rejected</option>
-                </select>
-            </div>
+            <nav class="top-bar">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo center">Appointments Dashboard</a>
+                    <ul class="right">
+                        <li><a href="#" class="dropdown-trigger" data-target="notifications">
+                            <i class="material-icons">notifications</i>
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
 
-            <div class="appointments-table">
-                <table class="striped">
-                    <thead>
-                        <tr>
-                            <th>Customer</th>
-                            <th>Service</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="appointments-list">
-                        <!-- Appointments will be dynamically inserted -->
-                    </tbody>
-                </table>
+            <div class="dashboard-content animate__animated animate__fadeIn">
+                <div class="row stats-row">
+                    <div class="col s12 m4">
+                        <div class="stat-card">
+                            <i class="material-icons">schedule</i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="pending-count">0</span>
+                                <span class="stat-label">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="stat-card">
+                            <i class="material-icons">check_circle</i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="approved-count">0</span>
+                                <span class="stat-label">Approved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="stat-card">
+                            <i class="material-icons">cancel</i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="rejected-count">0</span>
+                                <span class="stat-label">Rejected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointments-section">
+                    <div class="filter-section">
+                        <div class="input-field">
+                            <select id="status-filter" class="browser-default">
+                                <option value="">All Appointments</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+                        <div class="search-field">
+                            <i class="material-icons prefix">search</i>
+                            <input type="text" id="search-input" placeholder="Search appointments...">
+                        </div>
+                    </div>
+
+                    <div class="appointments-table animate__animated animate__fadeIn">
+                        <table class="highlight responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Email</th>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointments-list">
+                                <!-- Appointments will be dynamically inserted -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

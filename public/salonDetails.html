@@ -2,11 +2,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/salonDetails.css" />
   </head>
   <body>
     <h1>Salon Details Form</h1>
-    <form id="salonForm">
+    <form id="salonForm" enctype="multipart/form-data">
       <!-- Salon Name -->
       <label for="name">Salon Name:</label>
       <input
@@ -28,8 +29,8 @@
       ></textarea>
 
       <!-- Salon Logo -->
-      <label for="logo">Salon Logo (Optional):</label>
-      <input type="file" id="logo" name="logo" accept="image/*" />
+      <!-- <label for="logo">Salon Logo (Optional):</label>
+      <input type="file" id="logo" name="logo" accept="image/*" /> -->
 
       <!-- Phone Number -->
       <label for="phone">Contact Number:</label>
@@ -48,6 +49,26 @@
         id="email"
         name="email"
         placeholder="Enter contact email"
+        required
+      />
+
+      <!-- Salon Address -->
+      <label for="addressLine">Address:</label>
+      <textarea
+        id="addressLine"
+        name="addressLine"
+        rows="4"
+        placeholder="Where are you located?"
+        required
+      ></textarea>
+
+      <!-- Salon Name -->
+      <label for="suburb">Suburb:</label>
+      <input
+        type="text"
+        id="suburb"
+        name="suburb"
+        placeholder="Enter your suburb"
         required
       />
 
