@@ -1,6 +1,7 @@
 :root {
     --primary-color: #022a5b; 
-    --secondary-color: rgb(163, 201, 214); 
+    /* --secondary-color: rgb(163, 201, 214);  */
+    --secondary-color: rgb(203, 224, 231);
     --accent-color: #1d6277; 
     --background-color: #f8f9fa; 
     --text-dark: #022a5b;
@@ -9,12 +10,27 @@
     --black: #000000;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+
+  nav .nav-wrapper {
+    background-color: #022a5b;
+    color: var(--white);
+  }
+
+  .navbar-text {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-weight: bold;
+  }
+
+  nav i {
+    color: var(--white);
+  }
+
 .user-container {
     padding: 20px;
     width: 100%;
     margin: 0 auto;
-    background-color: var(--secondary-color);
-    border-radius: 12px;
+    background-color: whitesmoke;
     box-shadow: var(--shadow);
     min-height: 100vh;
 }
@@ -109,7 +125,7 @@
 }
 
 .appointments-table th {
-    background-color: var(--background-color);
+    background-color: var(--white);
     color: var(--text-dark);
     font-weight: 600;
     padding: 12px;
@@ -132,19 +148,25 @@
     display: inline-block;
 }
 
+.btn-small {
+    margin-left: 10%;
+    align-items: center;
+    text-align: center;
+}
+
 .status-pending {
-    background-color: var(--secondary-color);
-    color: var(--text-dark);
+    background-color: #fff3cd;
+    color: #856404;
 }
 
 .status-approved {
-    background-color: var(--accent-color);
-    color: var(--white);
+    background-color: #d4edda;
+    color: #155724;
 }
 
 .status-rejected {
-    background-color: var(--text-light);
-    color: var(--white);
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
 /* Hover effects for interactive elements */

@@ -44,4 +44,5 @@ app.listen(process.env.PORT, async () => {
         console.log(error);
       }
       console.log("Server on 3000");
+      console.log(`http://localhost:3000`)
 });

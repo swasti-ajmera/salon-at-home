@@ -9,8 +9,9 @@
   --black: #000000;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
   body {
-    background-color: var(--background-color);
+    background-color: rgb(203, 224, 231);
     font-family: "Roboto", sans-serif;
     padding: 20px;
   }
@@ -24,13 +25,12 @@
     margin: 20px auto;
   }
 
-  .submit-btn {
+  .submit-btn, .btn, .back-btn {
     background-color: var(--primary-color);
   }
 
   .back-btn {
     margin-bottom: 20px;
-    background-color: var(--secondary-color);
   }
 
   .profile-img {

@@ -10,7 +10,6 @@
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -120,15 +119,11 @@ body {
   padding-left: 2rem !important;
 }
 
-
-
-
 .main-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 6rem 2rem;
 }
-
 
 .filter-section {
   display: flex;
@@ -280,7 +275,6 @@ body {
   border-bottom: 2px solid var(--accent-color);
 }
 
-
 .modal .row {
   display: flex;
   flex-wrap: wrap;
@@ -366,7 +360,7 @@ body {
   }
   
   .right {
-    gap: 0.5rem; /* Reduce gap between items */
+    gap: 0.5rem;
   }
   
   .right a {
